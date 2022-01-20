@@ -1,0 +1,44 @@
+{
+ "name": "martinshumberto/pagarme-gateway-provider",
+ "description": "PagarMe Gateway Provider",
+ "type": "library",
+ "keywords": [],
+ "license": "MIT",
+ "authors": [
+  {
+   "name": "Humberto Martins",
+   "email": "humberto@consilio.com.br"
+  }
+ ],
+ "autoload": {
+  "psr-4": {
+   "MartinsHumberto\\PagarmeGateway\\": "src/"
+  }
+ },
+ "require": {
+  "php": ">=7.2",
+  "illuminate/support": "~6.0|~7.0|~8.0",
+  "guzzlehttp/guzzle": "~7.0",
+  "nesbot/carbon": "~2.0",
+  "pagarme/pagarme-php": "^4.1"
+ },
+ "require-dev": {
+  "phpunit/phpunit": "^8.0|^9.0",
+  "symfony/var-dumper": "~5.0"
+ },
+ "config": {
+  "sort-packages": true
+ },
+ "extra": {
+  "laravel": {
+   "providers": [
+    "MartinsHumberto\\PagarmeGateway\\Providers\\PagarmeGatewayServiceProvider"
+   ],
+   "aliases": {
+    "PagarmeGateway": "MartinsHumberto\\PagarmeGateway\\Facades\\PagarmeGateway"
+   }
+  }
+ },
+ "minimum-stability": "dev",
+ "prefer-stable": true
+}
