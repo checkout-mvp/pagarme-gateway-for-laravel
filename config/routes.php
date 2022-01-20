@@ -9,4 +9,4 @@ use MartinsHumberto\PagarmeGateway\Controllers\PagarmeNotificationController;
 |--------------------------------------------------------------------------
 */
 
-Route::apiResource('pagar-me/notifications', PagarmeNotificationController::class );
+Route::apiResource('pagar-me/notifications', PagarmeNotificationController::class);

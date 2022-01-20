@@ -15,5 +15,5 @@ class PagarmeNotification extends Model
         'event',
         'store_name',
         'data'
-	];
+    ];
 }

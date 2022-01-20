@@ -13,15 +13,17 @@ class CreatePagarmeNotification extends Migration
      */
     public function up()
     {
-        Schema::create('pagarme_notifications', function (Blueprint $table) {
-            $table->id();
-            $table->string('external_order')->nullable();
-            $table->string('status')->default('CREATED')->nullable();
-            $table->string('event')->nullable();
-            $table->string('store_name')->nullable();
-            $table->json('data')->nullable();
-            $table->timestamps();
-        });
+        Schema::create(
+            'pagarme_notifications', function (Blueprint $table) {
+                $table->id();
+                $table->string('external_order')->nullable();
+                $table->string('status')->default('CREATED')->nullable();
+                $table->string('event')->nullable();
+                $table->string('store_name')->nullable();
+                $table->json('data')->nullable();
+                $table->timestamps();
+            }
+        );
     }
 
     /**
