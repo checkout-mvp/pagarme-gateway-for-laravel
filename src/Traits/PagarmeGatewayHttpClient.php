@@ -1,7 +1,8 @@
 <?php
 namespace MartinsHumberto\PagarmeGateway\Traits;
 
-use PagarMe\Client as PagarMeClient;
+use PagarmeCoreApiLib\PagarmeCoreApiClient as PagarMeClientV5;
+use PagarMe\Client as PagarMeClientV4;
 
 trait PagarmeGatewayHttpClient
 {
@@ -14,7 +15,11 @@ trait PagarmeGatewayHttpClient
 
     protected function setClient()
     {
-        $client = new PagarMeClient($this->token, ['headers' => ['X-PagarMe-Version' => $this->version ]]);
+        if ($this->version === 'stable') {
+            $client = new PagarMeClientV5($this->token, '');
+        } else {
+            $client = new PagarMeClientV4($this->token, ['headers' => ['X-PagarMe-Version' => $this->version ]]);
+        }
 
         $this->client = $client;
     }

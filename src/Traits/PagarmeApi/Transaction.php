@@ -9,6 +9,10 @@ trait Transaction
     {
         $this->validate($data, ApiValidation::rules($this->version));
 
+        if ($this->version === 'stable') {
+            return $this->client->getOrders()->createOrder($data);
+        }
+
         return $this->client->transactions()->create($data);
     }
 }

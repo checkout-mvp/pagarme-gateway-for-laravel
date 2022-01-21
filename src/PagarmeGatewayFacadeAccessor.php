@@ -1,7 +1,6 @@
 <?php
 namespace MartinsHumberto\PagarmeGateway;
 
-use Exception;
 use MartinsHumberto\PagarmeGateway\Services\PagarmeGatewayService as PagarmeClient;
 
 class PagarmeGatewayFacadeAccessor
