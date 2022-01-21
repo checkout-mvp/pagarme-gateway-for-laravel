@@ -10,11 +10,7 @@ trait Transaction
         $this->validate($data, ApiValidation::rules($this->version));
 
         if ($this->version === 'stable') {
-            try {
-                return $this->client->getOrders()->createOrder($data);
-            } catch (\PagarmeCoreApiLib\Exceptions\ErrorException $e) {
-                return $e->getMessage();
-            }
+            return $this->client->getOrders()->createOrder($data);
         }
 
         return $this->client->transactions()->create($data);
