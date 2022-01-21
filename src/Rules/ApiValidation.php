@@ -81,7 +81,6 @@ class ApiValidation
         'stable' => [
             'code' => 'required_without:customer',
             'customer_id' => 'required_without:customer',
-
             'customer' => 'required|array',
             'customer.name' => 'required|max:64',
             'customer.email' => 'nullable|email|max:64',
@@ -103,13 +102,11 @@ class ApiValidation
             'customer.phones.mobile_phone.number' => 'required_with:customer.phones.mobile_phone|string',
             'customer.birthday' => 'nullable|date',
             'customer.metadata' => 'nullable',
-
             'items' => 'required|array',
             'items.*.amount' => 'required|integer|min:1',
             'items.*.description' => 'required|string|max:255',
             'items.*.quantity' => 'required|numeric|min:1',
             'items.*.code' => 'nullable',
-
             'shipping' => 'nullable|array',
             'shipping.amount' => 'nullable|integer|min:1',
             'shipping.description' => 'nullable|string|max:255',
@@ -121,7 +118,6 @@ class ApiValidation
             'shipping.address.zip_code' => 'nullable',
             'shipping.address.line_1' => 'nullable',
             'shipping.address.line_2' => 'nullable',
-
             'payments' => 'required',
             'payments.*.payment_method' => 'required|in:credit_card,boleto,pix',
             'payments.*.credit_card' => 'required_if:payments.*.payment_method,credit_card',
@@ -157,7 +153,6 @@ class ApiValidation
             'payments.*.boleto.document_number' => 'required_if:payments.*.payment_method,boleto|max:16',
             'payments.*.pix' => 'required_if:payments.*.payment_method,pix',
             'payments.*.amount' => 'nullable', // Cents
-
             'closed' => 'nullable|boolean',
             'metadata' => 'nullable',
             'amount' => 'required',
@@ -167,7 +162,6 @@ class ApiValidation
             'session_id' => 'nullable',
             'antifraud_enabled' => 'nullable|boolean',
             'antifraud' => 'nullable',
-
             'SubMerchant.Merchant_Category_Code' => 'nullable|max:4',
             'SubMerchant.Payment_Facilitator_Code' => 'nullable',
             'SubMerchant.Code' => 'nullable',
