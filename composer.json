@@ -2,7 +2,11 @@
  "name": "martinshumberto/pagarme-gateway-for-laravel",
  "description": "PagarMe Gateway for Laravel",
  "type": "library",
- "keywords": [],
+ "keywords": [
+  "laravel",
+  "pagarme",
+  "gateway"
+ ],
  "license": "MIT",
  "authors": [
   {
