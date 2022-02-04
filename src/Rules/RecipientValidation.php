@@ -13,7 +13,7 @@ class RecipientValidation
             'code' => 'nullable|string',
             'default_bank_account' => 'nullable|array',
             'default_bank_account.holder_name' => 'required_with:default_bank_account|string|max:30',
-            'default_bank_account.bank' => 'required_with:default_bank_account|integer|max:3',
+            'default_bank_account.bank' => 'required_with:default_bank_account|string|max:3',
             'default_bank_account.branch_number' => 'required_with:default_bank_account|string|max:4',
             'default_bank_account.branch_check_digit' => 'required_with:default_bank_account|string|max:1',
             'default_bank_account.account_number' => 'required_with:default_bank_account|string|max:13',
