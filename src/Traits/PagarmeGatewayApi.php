@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Validator;
 trait PagarmeGatewayApi
 {
     use PagarmeApi\Transaction;
+    use PagarmeApi\Recipient;
     use PagarmeApi\Installments;
 
     public function validate(array $data, array $rules)

@@ -5,7 +5,7 @@ use MartinsHumberto\PagarmeGateway\Rules\RecipientValidation;
 use MartinsHumberto\PagarmeGateway\Rules\WithdrawValidation;
 use RuntimeException;
 
-trait Transaction
+trait Recipient
 {
     public function createRecipient(array $data)
     {
