@@ -1,7 +1,7 @@
 <?php
 namespace MartinsHumberto\PagarmeGateway\Rules;
 
-class ApiValidation
+class TransactionValidation
 {
     protected static $validations = [
         '2019-09-01' => [

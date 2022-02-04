@@ -19,7 +19,7 @@ class PagarmeGatewayService
     {
         if (empty($credentials['token'])) {
             throw new RuntimeException(
-                "Please provide valid Token for $credentials[store_name] store to use PagarMe Gateway API."
+                "Please provide valid token for $credentials[store_name] store to use PagarMe Gateway API."
             );
         }
 
