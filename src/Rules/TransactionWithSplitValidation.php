@@ -152,17 +152,16 @@ class TransactionWithSplitValidation
             'payments.*.boleto.type' => 'required_if:payments.*.payment_method,boleto|in:DM,BDP',
             'payments.*.boleto.document_number' => 'required_if:payments.*.payment_method,boleto|max:16',
             'payments.*.pix' => 'required_if:payments.*.payment_method,pix',
-            'payments.*.amount' => 'nullable', // Cents
+            'payments.*.split' => 'required|array',
+            'payments.*.split.*.amount' => 'required|string',
+            'payments.*.split.*.recipient_id' => 'required|string',
+            'payments.*.split.*.type' => 'required|string|in:flat,percentage',
+            'payments.*.split.*.options' => 'required|array',
+            'payments.*.split.*.options.charge_processing_fee' => 'required_with:split.*.options|boolean',
+            'payments.*.split.*.options.charge_remainder_fee' => 'required_with:split.*.options|boolean',
+            'payments.*.split.*.options.liable' => 'required_with:split.*.options|boolean',
             'closed' => 'nullable|boolean',
             'metadata' => 'nullable',
-            'split' => 'required|array',
-            'split.*.amount' => 'required|string',
-            'split.*.recipient_id' => 'required|string',
-            'split.*.type' => 'required|string|in:flat,percentage',
-            'split.*.options' => 'required|array',
-            'split.*.options.charge_processing_fee' => 'required_with:split.*.options|boolean',
-            'split.*.options.charge_remainder_fee' => 'required_with:split.*.options|boolean',
-            'split.*.options.liable' => 'required_with:split.*.options|boolean',
         ]
     ];
 
