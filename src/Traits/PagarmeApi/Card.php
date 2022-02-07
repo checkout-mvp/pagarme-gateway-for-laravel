@@ -16,7 +16,7 @@ trait Card
             );
         }
         if ($this->version === 'stable') {
-            return $this->client->getTokens()->createToken($data);
+            return $this->client->getTokens()->createToken($this->public_key, $data);
         }
     }
 }

@@ -11,6 +11,8 @@ trait PagarmeGatewayRequest
 
     protected $token;
 
+    protected $public_key;
+
     protected $version;
 
     public function setConfig(array $config = [])
@@ -22,6 +24,7 @@ trait PagarmeGatewayRequest
         $this->setCredentials($config);
 
         unset($config['token']);
+        unset($config['public_key']);
 
         $this->config = $config;
     }
@@ -36,6 +39,8 @@ trait PagarmeGatewayRequest
 
         $this->setToken($credentials['token']);
 
+        $this->setPublicKey($credentials['public_key']);
+
         $this->setVersion($credentials['version']);
 
         $this->setHttpClientConfig();
@@ -44,6 +49,11 @@ trait PagarmeGatewayRequest
     protected function setToken(string $token)
     {
         $this->token = $token;
+    }
+
+    protected function setPublicKey(string $public_key)
+    {
+        $this->public_key = $public_key;
     }
 
     protected function setVersion(string $version)
