@@ -8,6 +8,7 @@ trait PagarmeGatewayApi
     use PagarmeApi\Transaction;
     use PagarmeApi\Recipient;
     use PagarmeApi\Installments;
+    use PagarmeApi\CardToken;
 
     public function validate(array $data, array $rules)
     {
