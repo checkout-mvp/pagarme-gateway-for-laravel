@@ -3,9 +3,9 @@ namespace MartinsHumberto\PagarmeGateway\Traits\PagarmeApi;
 
 use MartinsHumberto\PagarmeGateway\Rules\CardValidation;
 
-trait CardToken
+trait Card
 {
-    public function createToken(array $data)
+    public function createCardToken(array $data)
     {
         $this->validate($data, CardValidation::rules($this->version));
 
