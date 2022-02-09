@@ -26,7 +26,7 @@ class RecipientValidation
             'transfer_settings.transfer_interval' => 'required_with:transfer_settings|string|in:day,week,month,year',
             'transfer_settings.transfer_day' => 'required_with:transfer_settings|integer',
             'automatic_anticipation_settings' => 'nullable|array',
-            'transfer_settings.enables' => 'required_with:automatic_anticipation_settings|boolean',
+            'automatic_anticipation_settings.enabled' => 'required_with:automatic_anticipation_settings|boolean',
             'automatic_anticipation_settings.type' => 'required_with:automatic_anticipation_settings|string|in:full,1025',
             'automatic_anticipation_settings.volume_percentage' => 'required_with:automatic_anticipation_settings|string',
             'automatic_anticipation_settings.delay' => 'required_with:automatic_anticipation_settings|string',
