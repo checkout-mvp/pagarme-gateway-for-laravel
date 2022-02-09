@@ -23,7 +23,7 @@ class RecipientValidation
             'default_bank_account.type' => 'required_with:default_bank_account|string|in:checking,savings',
             'transfer_settings' => 'nullable|array',
             'transfer_settings.transfer_enabled' => 'required_with:transfer_settings|boolean',
-            'transfer_settings.transfer_interval' => 'required_with:transfer_settings|string|in:day,week,month,year',
+            'transfer_settings.transfer_interval' => 'required_with:transfer_settings|string|in:daily,weekly,monthly',
             'transfer_settings.transfer_day' => 'required_with:transfer_settings|integer',
             'automatic_anticipation_settings' => 'nullable|array',
             'automatic_anticipation_settings.enabled' => 'required_with:automatic_anticipation_settings|boolean',
