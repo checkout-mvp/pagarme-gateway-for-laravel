@@ -1,6 +1,7 @@
 <?php
 namespace MartinsHumberto\PagarmeGateway\Traits\PagarmeApi;
 
+use MartinsHumberto\PagarmeGateway\Rules\BankAccountValidation;
 use MartinsHumberto\PagarmeGateway\Rules\RecipientValidation;
 use MartinsHumberto\PagarmeGateway\Rules\WithdrawValidation;
 use RuntimeException;
@@ -32,6 +33,20 @@ trait Recipient
         }
         if ($this->version === 'stable') {
             return $this->client->getRecipients()->updateRecipient($recipientId, $data);
+        }
+    }
+
+    public function updateRecipientDefaultBankAccount($recipientId, array $data)
+    {
+        $this->validate($data, BankAccountValidation::rules($this->version));
+
+        if ($this->version === '2019-09-01') {
+            throw new RuntimeException(
+                "Not implemented yet."
+            );
+        }
+        if ($this->version === 'stable') {
+            return $this->client->getRecipients()->updateRecipientDefaultBankAccount($recipientId, $data);
         }
     }
 
@@ -94,6 +109,23 @@ trait Recipient
                 $status,
                 $createdSince,
                 $createdUntil
+            );
+        }
+    }
+
+    public function getWithdrawById(
+        $recipientId,
+        $withdrawalId
+    ) {
+        if ($this->version === '2019-09-01') {
+            throw new RuntimeException(
+                "Not implemented yet."
+            );
+        }
+        if ($this->version === 'stable') {
+            return $this->client->getRecipients()->getWithdrawById(
+                $recipientId,
+                $withdrawalId
             );
         }
     }
