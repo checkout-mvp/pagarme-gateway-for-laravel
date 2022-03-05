@@ -15,7 +15,7 @@ class RecipientValidation
             'default_bank_account.holder_name' => 'required_with:default_bank_account|string|max:30',
             'default_bank_account.bank' => 'required_with:default_bank_account|string|max:3',
             'default_bank_account.branch_number' => 'required_with:default_bank_account|string|max:4',
-            'default_bank_account.branch_check_digit' => 'required_with:default_bank_account|string|max:1',
+            'default_bank_account.branch_check_digit' => 'nullable|string|max:1',
             'default_bank_account.account_number' => 'required_with:default_bank_account|string|max:13',
             'default_bank_account.account_check_digit' => 'required_with:default_bank_account|string|max:2',
             'default_bank_account.holder_type' => 'required_with:default_bank_account|string|in:individual,company',
