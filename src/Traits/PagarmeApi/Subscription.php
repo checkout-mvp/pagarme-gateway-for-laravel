@@ -1,12 +1,12 @@
 <?php
 namespace MartinsHumberto\PagarmeGateway\Traits\PagarmeApi;
 
-use MartinsHumberto\PagarmeGateway\Rules\Subscription\CancelSubscriptionValidation;
 use MartinsHumberto\PagarmeGateway\Rules\Subscription\CreatePlanSubscriptionValidation;
-use MartinsHumberto\PagarmeGateway\Rules\Subscription\CreatePlanValidation;
-use MartinsHumberto\PagarmeGateway\Rules\Subscription\UpdatePlanValidation;
 use MartinsHumberto\PagarmeGateway\Rules\Subscription\UpdateSplitSubscriptionValidation;
 use MartinsHumberto\PagarmeGateway\Rules\Subscription\UpdateSubscriptionCardValidation;
+use MartinsHumberto\PagarmeGateway\Rules\Subscription\CancelSubscriptionValidation;
+use MartinsHumberto\PagarmeGateway\Rules\Subscription\CreatePlanValidation;
+use MartinsHumberto\PagarmeGateway\Rules\Subscription\UpdatePlanValidation;
 use RuntimeException;
 
 trait Subscription
