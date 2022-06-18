@@ -1,12 +1,12 @@
 <?php
+
 namespace MartinsHumberto\PagarmeGateway\Rules\Subscription;
 
-class UpdatePlanValidation
+class CreatePlanValidation
 {
     protected static $validations = [
         'stable' => [
             'name' => 'required|string|max:64',
-            'status' => 'nullable|string|in:active,canceled,expired',
             'description' => 'nullable|string',
             'shippable' => 'nullable|boolean',
             'payment_methods' => 'nullable|array',

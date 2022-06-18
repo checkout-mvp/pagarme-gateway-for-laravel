@@ -1,4 +1,5 @@
 <?php
+
 namespace MartinsHumberto\PagarmeGateway\Rules;
 
 class TransactionWithSplitValidation

@@ -1,4 +1,5 @@
 <?php
+
 namespace MartinsHumberto\PagarmeGateway;
 
 use MartinsHumberto\PagarmeGateway\Services\PagarmeGatewayService as PagarmeClient;

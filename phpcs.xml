@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<ruleset name="PSR4">
+    <description>The coding standard for our project.</description>
+
+    <arg name="basepath" value="." />
+    <rule ref="vendor/suin/phpcs-psr4-sniff/src/Suin" />
+
+    <rule ref="Suin.Classes.PSR4">
+        <properties>
+            <property name="composerJsonPath" value="composer.json" />
+        </properties>
+    </rule>
+
+    <file>src/</file>
+
+    <exclude-pattern>migrations/*</exclude-pattern>
+    <exclude-pattern>node_modules/*</exclude-pattern>
+</ruleset>
