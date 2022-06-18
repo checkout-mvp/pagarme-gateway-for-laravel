@@ -21,8 +21,8 @@ class UpdatePlanValidation
             'interval_count' => 'required|integer|min:1',
             'trial_period_days' => 'nullable|integer|min:1',
             'billing_type' => 'nullable|string|in:prepaid,postpaid,exact_day',
-            'billing_days' => 'required_with:billing_type,exact_day|array|min:1',
-            'billing_days.*' => 'required_with:billing_type,exact_day|integer|distinct|min:1|max:28',
+            'billing_days' => 'required_if:billing_type,exact_day|array|min:1',
+            'billing_days.*' => 'required_if:billing_type,exact_day|integer|distinct|min:1|max:28',
             'items' => 'nullable|array',
             'metadata' => 'nullable|array',
         ]
