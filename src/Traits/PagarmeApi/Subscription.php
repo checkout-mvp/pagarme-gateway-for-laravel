@@ -25,7 +25,7 @@ trait Subscription
         }
     }
 
-    public function cancelSubscription(array $data)
+    public function cancelSubscription($subscriptionId, array $data)
     {
         $this->validate($data, CancelSubscriptionValidation::rules($this->version));
 
@@ -35,7 +35,7 @@ trait Subscription
             );
         }
         if ($this->version === 'stable') {
-            return $this->client->getSubscriptions()->cancelSubscription($data);
+            return $this->client->getSubscriptions()->cancelSubscription($subscriptionId, $data);
         }
     }
 
