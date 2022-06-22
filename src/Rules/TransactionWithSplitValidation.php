@@ -153,6 +153,7 @@ class TransactionWithSplitValidation
             'payments.*.boleto.type' => 'required_if:payments.*.payment_method,boleto|in:DM,BDP',
             'payments.*.boleto.document_number' => 'required_if:payments.*.payment_method,boleto|max:16',
             'payments.*.pix' => 'required_if:payments.*.payment_method,pix',
+            'payments.*.amount' => 'nullable|integer|min:1',
             'payments.*.split' => 'required|array',
             'payments.*.split.*.amount' => 'required|string',
             'payments.*.split.*.recipient_id' => 'required|string',
