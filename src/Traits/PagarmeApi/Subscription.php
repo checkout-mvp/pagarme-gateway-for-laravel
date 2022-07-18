@@ -192,4 +192,66 @@ trait Subscription
             return $this->client->getPlans()->getPlans($planId);
         }
     }
+
+    public function updateSubscriptionBillingDate($subscriptionId, array $data)
+    {
+        $this->validate($data, [
+            'next_billing_at' => 'required|date',
+        ]);
+
+        if ($this->version === '2019-09-01') {
+            throw new RuntimeException(
+                "Not implemented yet."
+            );
+        }
+        if ($this->version === 'stable') {
+            return $this->client->getSubscriptions()->updateSubscriptionBillingDate($subscriptionId, $data);
+        }
+    }
+
+    public function updateSubscriptionDueDays($subscriptionId, array $data)
+    {
+        $this->validate($data, [
+            'boleto_due_days' => 'required|date',
+        ]);
+
+        if ($this->version === '2019-09-01') {
+            throw new RuntimeException(
+                "Not implemented yet."
+            );
+        }
+        if ($this->version === 'stable') {
+            return $this->client->getSubscriptions()->updateSubscriptionDueDays($subscriptionId, $data);
+        }
+    }
+
+    public function renewSubscription($subscriptionId)
+    {
+        if ($this->version === '2019-09-01') {
+            throw new RuntimeException(
+                "Not implemented yet."
+            );
+        }
+        if ($this->version === 'stable') {
+            return $this->client->getSubscriptions()->renewSubscription($subscriptionId);
+        }
+    }
+
+    public function updateSubscriptionPaymentMethod($subscriptionId, array $data)
+    {
+        $this->validate($data, [
+            'payment_method' => 'required|string|in:credit_card,boleto,debit_card',
+            'card_id' => 'nullable',
+            'card_token' => 'nullable',
+        ]);
+
+        if ($this->version === '2019-09-01') {
+            throw new RuntimeException(
+                "Not implemented yet."
+            );
+        }
+        if ($this->version === 'stable') {
+            return $this->client->getSubscriptions()->updateSubscriptionPaymentMethod($subscriptionId, $data);
+        }
+    }
 }
