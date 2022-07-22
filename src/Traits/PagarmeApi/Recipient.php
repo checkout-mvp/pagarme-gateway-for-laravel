@@ -62,6 +62,18 @@ trait Recipient
         }
     }
 
+    public function getRecipientByCode($code)
+    {
+        if ($this->version === '2019-09-01') {
+            throw new RuntimeException(
+                "Not implemented yet."
+            );
+        }
+        if ($this->version === 'stable') {
+            return $this->client->getRecipients()->getRecipientByCode($code);
+        }
+    }
+
     public function getRecipients($page = null, $size = null)
     {
         if ($this->version === '2019-09-01') {
