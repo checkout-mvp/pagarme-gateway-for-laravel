@@ -6,7 +6,7 @@ class CloseOrder
 {
     protected static $validations = [
         'stable' => [
-            'status' => 'nullable|regex:(paid|canceled|failed)',
+            'status' => 'nullable|in:paid,canceled,failed',
         ]
     ];
 
