@@ -256,15 +256,17 @@ trait Subscription
     }
 
     public function getInvoices(
-        $page = null, 
-        $size = null, 
-        $subscription_id = null,
+        $page = null,
+        $size = null,
+        $code = null,
         $customer_id = null,
+        $subscriptionId = null,
+        $created_since = null,
+        $created_until = null,
         $status = null,
         $due_since = null,
         $due_until = null,
-        $created_since = null,
-        $created_until = null
+        $customer_document = null
     ) {
         if ($this->version === '2019-09-01') {
             throw new RuntimeException(
@@ -273,15 +275,17 @@ trait Subscription
         }
         if ($this->version === 'stable') {
             return $this->client->getInvoices()->getInvoices(
-                $page = null, 
-                $size = null, 
-                $subscription_id = null,
+                $page = null,
+                $size = null,
+                $code = null,
                 $customer_id = null,
+                $subscriptionId = null,
+                $created_since = null,
+                $created_until = null,
                 $status = null,
                 $due_since = null,
                 $due_until = null,
-                $created_since = null,
-                $created_until = null,
+                $customer_document = null
             );
         }
     }
