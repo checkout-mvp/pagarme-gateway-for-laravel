@@ -74,16 +74,16 @@ trait Subscription
             return $this->client->getSubscriptions()->getSubscriptions(
                 $page, 
                 $size,
-                $code = null,
-                $billingType = null,
-                $customerId = null,
-                $planId = null,
-                $cardId = null,
-                $status = null,
-                $nextBillingSince = null,
-                $nextBillingUntil = null,
-                $createdSince = null,
-                $createdUntil = null
+                $code,
+                $billingType,
+                $customerId,
+                $planId,
+                $cardId,
+                $status,
+                $nextBillingSince,
+                $nextBillingUntil,
+                $createdSince,
+                $createdUntil
             );
         }
     }
@@ -171,12 +171,12 @@ trait Subscription
         }
         if ($this->version === 'stable') {
             return $this->client->getPlans()->getPlans(
-                $page = null, 
-                $size = null, 
-                $name = null,
-                $status = null,
-                $created_since = null,
-                $created_until = null
+                $page, 
+                $size, 
+                $name,
+                $status,
+                $created_since,
+                $created_until
             );
         }
     }
@@ -260,7 +260,7 @@ trait Subscription
         $size = null,
         $code = null,
         $customer_id = null,
-        $subscriptionId = null,
+        $subscription_id = null,
         $created_since = null,
         $created_until = null,
         $status = null,
@@ -275,17 +275,17 @@ trait Subscription
         }
         if ($this->version === 'stable') {
             return $this->client->getInvoices()->getInvoices(
-                $page = null,
-                $size = null,
-                $code = null,
-                $customer_id = null,
-                $subscriptionId = null,
-                $created_since = null,
-                $created_until = null,
-                $status = null,
-                $due_since = null,
-                $due_until = null,
-                $customer_document = null
+                $page,
+                $size,
+                $code,
+                $customer_id,
+                $subscription_id,
+                $created_since,
+                $created_until,
+                $status,
+                $due_since,
+                $due_until,
+                $customer_document
             );
         }
     }
