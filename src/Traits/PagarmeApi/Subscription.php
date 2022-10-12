@@ -254,4 +254,35 @@ trait Subscription
             return $this->client->getSubscriptions()->updateSubscriptionPaymentMethod($subscriptionId, $data);
         }
     }
+
+    public function getInvoices(
+        $page = null, 
+        $size = null, 
+        $subscription_id = null,
+        $customer_id = null,
+        $status = null,
+        $due_since = null,
+        $due_until = null,
+        $created_since = null,
+        $created_until = null
+    ) {
+        if ($this->version === '2019-09-01') {
+            throw new RuntimeException(
+                "Not implemented yet."
+            );
+        }
+        if ($this->version === 'stable') {
+            return $this->client->getInvoices()->getInvoices(
+                $page = null, 
+                $size = null, 
+                $subscription_id = null,
+                $customer_id = null,
+                $status = null,
+                $due_since = null,
+                $due_until = null,
+                $created_since = null,
+                $created_until = null,
+            );
+        }
+    }
 }
