@@ -10,6 +10,7 @@ trait PagarmeGatewayApi
     use PagarmeApi\Installments;
     use PagarmeApi\Card;
     use PagarmeApi\Subscription;
+    use PagarmeApi\Charge;
 
     public function validate(array $data, array $rules)
     {
